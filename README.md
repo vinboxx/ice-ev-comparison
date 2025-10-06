@@ -13,13 +13,13 @@ Mobile-first, responsive single-page app built with Next.js (TypeScript). Dark t
 
 # Tech Stack
 
-* Next.js 15 App Router + TypeScript
-* Tailwind CSS + DaisyUI
-* Recharts for charts
-* React Hook Form + Zod (planned for richer validation; minimal placeholder form currently)
-* Vitest for unit tests (calculations)
-* i18n via simple JSON locale files under `public/locales`
-* No ESLint (per spec) — only Prettier formatting
+-   Next.js 15 App Router + TypeScript
+-   Tailwind CSS + DaisyUI
+-   Recharts for charts
+-   React Hook Form + Zod (planned for richer validation; minimal placeholder form currently)
+-   Vitest for unit tests (calculations)
+-   i18n via simple JSON locale files under `public/locales`
+-   No ESLint (per spec) — only Prettier formatting
 
 ---
 
@@ -76,6 +76,7 @@ npm install
 ```bash
 npm run dev
 ```
+
 Open http://localhost:3000/compare
 
 ---
@@ -116,12 +117,13 @@ Dark mode default. Theme toggle updates `<html>` class `dark` and sets `data-the
 Core logic in `lib/calculations.ts`. Provides `compare({ vehicles, horizonYears, annualKm })` returning per-vehicle totals plus yearly cumulative costs.
 
 Formulas implemented:
-* Fuel liters = annualKm / kmPerLiter
-* Fuel cost = liters * fuelPricePerLiter
-* EV energy = (annualKm / 100) * kWh/100km
-* Electricity cost = energy * pricePerKwh
-* Loan payment = standard amortization M = P * r * (1+r)^n / ((1+r)^n - 1)
-* Total cost ≈ running + maintenance + loan + (purchase - resale)
+
+-   Fuel liters = annualKm / kmPerLiter
+-   Fuel cost = liters \* fuelPricePerLiter
+-   EV energy = (annualKm / 100) \* kWh/100km
+-   Electricity cost = energy \* pricePerKwh
+-   Loan payment = standard amortization M = P _ r _ (1+r)^n / ((1+r)^n - 1)
+-   Total cost ≈ running + maintenance + loan + (purchase - resale)
 
 Depreciation currently modeled simply as (purchase - resale)/horizon for visualization.
 
@@ -130,11 +132,13 @@ Depreciation currently modeled simply as (purchase - resale)/horizon for visuali
 # Testing
 
 Minimal test in `lib/__tests__/calculations.test.ts`. Add more covering:
-* Resale impact
-* Zero km edge case
-* EV fallback consumption via range + battery capacity
+
+-   Resale impact
+-   Zero km edge case
+-   EV fallback consumption via range + battery capacity
 
 Run:
+
 ```bash
 npm run test
 ```
@@ -143,21 +147,21 @@ npm run test
 
 # Roadmap / Next Steps
 
-* Integrate React Hook Form + Zod schema into `VehicleForm`
-* Add translation consumption for labels / table headers
-* Persist last-used vehicles in `localStorage`
-* Add stacked + pie chart i18n labels
-* Add advanced options: discount rate (NPV), battery replacement modeling
-* Export to CSV
+-   Integrate React Hook Form + Zod schema into `VehicleForm`
+-   Add translation consumption for labels / table headers
+-   Persist last-used vehicles in `localStorage`
+-   Add stacked + pie chart i18n labels
+-   Add advanced options: discount rate (NPV), battery replacement modeling
+-   Export to CSV
 
 ---
 
 # Contributing
 
-* Fork -> branch -> PR. Keep changes small and focused.
-* Use Prettier before committing.
-* Add tests for logic changes.
-* Keep README updated for new env vars or scripts.
+-   Fork -> branch -> PR. Keep changes small and focused.
+-   Use Prettier before committing.
+-   Add tests for logic changes.
+-   Keep README updated for new env vars or scripts.
 
 ---
 

@@ -2,10 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, :root { height: 100%; }
-body { @apply bg-base-100 text-base-content antialiased; }
+html,
+body,
+:root {
+    height: 100%;
+}
+body {
+    @apply bg-base-100 text-base-content antialiased;
+}
 
 /* Scrollbar (webkit) minimal styling */
-::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: theme('colors.slate.500'); border-radius: 4px; }
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: theme('colors.slate.500');
+    border-radius: 4px;
+}
